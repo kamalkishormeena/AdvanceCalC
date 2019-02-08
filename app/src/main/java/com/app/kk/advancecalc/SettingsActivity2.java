@@ -27,7 +27,7 @@ public class SettingsActivity2 extends AppCompatActivity {
         SharedPreferences modepref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
 
-        if(modepref.getBoolean("dark", true)){
+        if(modepref.getBoolean(KEY_PREF_MODE, true)){
             sharedpref.setNightModeState(true);
 
 
