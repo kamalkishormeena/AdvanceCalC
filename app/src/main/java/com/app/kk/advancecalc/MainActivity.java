@@ -10,6 +10,10 @@ import android.view.View.OnLongClickListener;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.app.kk.advancecalc.Database.DBHelper;
+import com.app.kk.advancecalc.Supports.Checker;
+import com.app.kk.advancecalc.Supports.Postfix;
+
 import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {

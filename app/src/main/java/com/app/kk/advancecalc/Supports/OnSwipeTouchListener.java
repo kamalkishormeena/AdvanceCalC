@@ -1,11 +1,10 @@
-package com.app.kk.advancecalc;
+package com.app.kk.advancecalc.Supports;
 
 import android.content.Context;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 /**
  * Created by Xzya on 24/2/2015.

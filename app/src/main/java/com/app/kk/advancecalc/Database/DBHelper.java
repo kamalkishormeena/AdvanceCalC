@@ -1,4 +1,4 @@
-package com.app.kk.advancecalc;
+package com.app.kk.advancecalc.Database;
 
 import android.content.ContentValues;
 import android.content.Context;

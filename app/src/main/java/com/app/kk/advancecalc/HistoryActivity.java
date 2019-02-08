@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.app.kk.advancecalc.Database.DBHelper;
+
 import java.util.ArrayList;
 
 public class HistoryActivity extends AppCompatActivity {
