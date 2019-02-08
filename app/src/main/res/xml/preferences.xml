@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <SwitchPreferenceCompat
+        android:key="dark"
+        android:summaryOff="Turn On For Dark Theme"
+        android:summaryOn="Turn Off For Light Theme"
+        android:title="Dark Theme"
+        android:defaultValue="false" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="@string/switchKey"
+        android:summaryOff="@string/switchOFF"
+        android:summaryOn="@string/switchON"
+        android:title="@string/switchLabel"/>
+    <android.support.v7.preference.DropDownPreference
+        android:key="color"
+        android:title="Color"
+        android:entries="@array/list_preference_entries"
+        android:entryValues="@array/list_preference_entries" />
+    <Preference
+        android:selectable="true"
+        android:enabled="true"
+        android:key="share"
+        android:title="Share"
+        />
+    <Preference
+        android:selectable="true"
+        android:enabled="true"
+        android:key="rate"
+        android:title="Rate Us"
+        />
+    <Preference
+        android:selectable="true"
+        android:enabled="true"
+        android:key="update"
+        android:title="Check For Update"
+        android:summary="v1.0"
+        />
+
+
+</PreferenceScreen>

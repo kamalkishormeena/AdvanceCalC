@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Advance CalC</string>
+    <string name="title_activity_main">Calculator</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_history">History</string>
+    <string name="expression">Enter new expression</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="multiply">x</string>
+    <string name="erase">C</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="divide">÷</string>
+    <string name="backspace">DEL</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="plus">+</string>
+    <string name="equals">=</string>
+    <string name="zero">0</string>
+    <string name="dot">.</string>
+    <string name="subtract">-</string>
+    <string name="left_parenthesis">(</string>
+    <string name="left_parentheses">(</string>
+    <string name="right_parentheses">)</string>
+    <string name="pow">x\u207F</string>
+    <string name="square_root">√x</string>
+    <string name="change_sign">+/-</string>
+    <string name="factorial">x!</string>
+    <string name="answer">Ans</string>
+    <string name="shift">Shift</string>
+    <string name="sin1">sin</string>
+    <string name="sin2">sin\u207B\u00B9</string>
+    <string name="cos1">cos</string>
+    <string name="cos2">cos\u207B\u00B9</string>
+    <string name="tan1">tan</string>
+    <string name="tan2">tan\u207B\u00B9</string>
+    <string name="log1">log</string>
+    <string name="log2">log\u2082</string>
+    <string name="deleteHistory">Delete History</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="pie">π</string>
+    <string name="mode1">RAD</string>
+    <string name="mode2">DEG</string>
+    <string name="square">x²</string>
+
+    <!--Pref-->
+    <string name="switchKey">night</string>
+    <string name="switchLabel">Night Mode</string>
+    <string name="switchON">Night Mode ON</string>
+    <string name="switchOFF">Night Mode OFF</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+
+    <string name="pref_title_Theme">Dark Mode</string>
+    <string name="pref_description_TN">Apply Night mode color in Calaculator
+    </string>
+
+
+    <string-array name="list_preference_entries">
+        <item>Default</item>
+        <item>Green</item>
+        <item>Blue</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+</resources>

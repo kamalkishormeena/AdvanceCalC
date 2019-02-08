@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#1D1D1D</color>
+    <color name="primaryColorDark">#161616</color>
+    <color name="primaryColorLight">#5b5b5b</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="textColor">#ECEFF1</color>
+    <color name="White">#ffffff</color>
+    <color name="trans">#8DFFFFFF</color>
+    <color name="Black">#000000</color>
+    <color name="Grey">#767676</color>
+    <color name="LightGrey">#D1D1D1</color>
+
+    <color name="equals">#ff7b00</color>
+    <color name="equalsps">#d46600</color>
+    <color name="special">#548401</color>
+    <color name="specialp">#3d6000</color>
+    <color name="btn_state_pressed_text_color">#ed0000</color>
+
+
+    <!--LIGHT MATERIAL THEME -->
+    <color name="primaryColor2">#E53935</color>
+    <color name="primaryColorDark2">#CE312D</color>
+    <color name="colorAccent2">#ff7b00</color>
+    <color name="textColor2">#ECEFF1</color>
+    <color name="display">#E53935</color>
+    <color name="special2">#FFFFFF</color>
+    <color name="specialp2">#F0F0F0</color>
+    <color name="CalcText">#F3322D</color>
+
+
+
+
+
+</resources>
