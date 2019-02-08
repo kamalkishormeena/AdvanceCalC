@@ -24,10 +24,10 @@ public class SettingsActivity2 extends AppCompatActivity {
        // getSupportFragmentManager().beginTransaction().replace(android.R.id.content, new SettingsFragment())
        // .commit();
 
-        SharedPreferences modepref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences modePref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
 
-        if(modepref.getBoolean(KEY_PREF_MODE, true)){
+        if(modePref.getBoolean(KEY_PREF_MODE, true)){
             sharedpref.setNightModeState(true);
 
 
