@@ -1,5 +1,7 @@
 package com.app.kk.advancecalc.Supports;
 
+import com.app.kk.advancecalc.R;
+
 import java.util.LinkedList;
 import java.util.Stack;
 /**
@@ -119,7 +121,7 @@ public class Postfix {
                 }
                 break;
             case "π":
-                result = pi(arguments.pop());
+                result = pi(String.valueOf(arguments.add(String.valueOf(R.string.pi))), arguments.pop());
                 break;
             case "sqrt":
                 result = sqrt(arguments.pop());
@@ -245,13 +247,14 @@ public class Postfix {
     private double square(String a) {
         Double valA = Double.parseDouble(a);
 
-        return valA*valA;
+        return valA * valA;
     }
 
-    private double pi(String a){
+    private double pi(String a, String b){
         Double valA = Double.parseDouble(a);
+        Double valB = Double.parseDouble(b);
 
-        return Math.PI;
+        return valA + valB;
     }
 
     /**

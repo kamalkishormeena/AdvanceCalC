@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="diplay_height">180dp</dimen>
+    <dimen name="result_text_size">30dp</dimen>
+    <dimen name="expressions_text_size">70dp</dimen>
+    <dimen name="mode_txt_size">20dp</dimen>
+    <dimen name="diplay_height_land">100dp</dimen>
+    <dimen name="result_text_size_land">20dp</dimen>
+    <dimen name="expressions_text_size_land">50dp</dimen>
+
+</resources>

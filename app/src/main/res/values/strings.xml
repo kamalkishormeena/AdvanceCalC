@@ -45,6 +45,7 @@
     <string name="deleteHistory">Delete History</string>
     <string name="title_activity_settings">Settings</string>
     <string name="pie">π</string>
+    <string name="pi">3.141592653589793</string>
     <string name="mode1">RAD</string>
     <string name="mode2">DEG</string>
     <string name="square">x²</string>
@@ -54,6 +55,8 @@
     <string name="switchLabel">Night Mode</string>
     <string name="switchON">Night Mode ON</string>
     <string name="switchOFF">Night Mode OFF</string>
+
+    <string name="Theme"></string>
 
     <!-- Strings related to Settings -->
 
@@ -77,5 +80,6 @@
     </string-array>
 
     <string-array name="multi_select_list_preference_default_value" />
+
 
 </resources>

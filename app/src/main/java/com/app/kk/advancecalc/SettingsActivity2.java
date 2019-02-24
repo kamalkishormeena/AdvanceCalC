@@ -1,19 +1,19 @@
 package com.app.kk.advancecalc;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.preference.PreferenceManager;
+import android.support.v7.preference.SwitchPreferenceCompat;
 
 public class SettingsActivity2 extends AppCompatActivity {
     SharedPref sharedpref;
+    SwitchPreferenceCompat switchPreferenceCompat;
     public static final String KEY_PREF_MODE="dark";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        sharedpref = new SharedPref(this);
+        sharedpref = new SharedPref(SettingsActivity2.this);
         if(sharedpref.loadNightModeState()==true) {
             setTheme(R.style.DarkTheme_Bar);
         }
@@ -24,17 +24,18 @@ public class SettingsActivity2 extends AppCompatActivity {
        // getSupportFragmentManager().beginTransaction().replace(android.R.id.content, new SettingsFragment())
        // .commit();
 
-        SharedPreferences modePref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        /*SharedPreferences modePref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+                if(modePref.getBoolean(KEY_PREF_MODE, true)){
+                    sharedpref.setNightModeState(true);
+                    restartApp();
+
+                } else {
+                    sharedpref.setNightModeState(false);
+
+                }*/
 
 
-        if(modePref.getBoolean(KEY_PREF_MODE, true)){
-            sharedpref.setNightModeState(true);
-
-
-        } else {
-            sharedpref.setNightModeState(false);
-
-        }
     }
 
 

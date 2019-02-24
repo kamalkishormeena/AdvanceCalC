@@ -4,10 +4,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class SharedPref {
-    SharedPreferences mySharedPref, switchPref ;
+    SharedPreferences mySharedPref, switchPref, modebtn ;
     public SharedPref(Context context) {
     mySharedPref = context.getSharedPreferences("filename",Context.MODE_PRIVATE);
     switchPref = context.getSharedPreferences("filename",Context.MODE_PRIVATE);
+    modebtn = context.getSharedPreferences("filename", context.MODE_PRIVATE);
 
     }
 

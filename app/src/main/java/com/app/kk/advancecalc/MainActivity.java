@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
     private DBHelper dbHelper;
     private double PI=3.141592653589793;
     private boolean shiftPressed = false;
+    private int SETTINGS_ACTION = 1;
     SharedPref sharedpref;
 
     @Override
@@ -82,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.appbar);
         toolbar.setTitle("");
+
         if(sharedpref.loadNightModeState()==true){
             toolbar.setPopupTheme(R.style.AppTheme_Popupoverlay_Dark);
         } else {
@@ -134,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
         dbHelper=new DBHelper(this);
 
         mode.setTag(1);
+
         modeDisplay.setText(R.string.mode1);
         modeDisplay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -625,6 +628,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
         return true;
     }
 
@@ -652,5 +656,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == SETTINGS_ACTION) {
+            if (resultCode == SettingsFragment.RESULT_CODE_THEME_UPDATED) {
+                finish();
+                startActivity(getIntent());
+                return;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }

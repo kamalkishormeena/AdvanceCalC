@@ -18,17 +18,24 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 
-public class SettingsFragment extends PreferenceFragmentCompat {
+public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     public SwitchPreferenceCompat mode;
     private Context context;
-
+    public static final int RESULT_CODE_THEME_UPDATED = 1;
+    SharedPref sharedPref;
+    SharedPreferences sharedPreferences;
 
     @Override
     public void onCreatePreferences(Bundle savedInsatance, String rootkey) {
-
         setPreferencesFromResource(R.xml.preferences, rootkey);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
+        onSharedPreferenceChanged(sharedPreferences, getString(R.string.Theme));
+
         final SwitchPreferenceCompat mode = (SwitchPreferenceCompat) findPreference("dark");
+
+        findPreference("dark").setOnPreferenceChangeListener(new RefershActivityOnPreferenceChangeListener(RESULT_CODE_THEME_UPDATED));;
         Preference share = (Preference) findPreference("share");
         Preference rate = (Preference) findPreference("rate");
         Preference update = (Preference) findPreference("update");
@@ -46,7 +53,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         mode.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                check();
+
                 return false;
             }
         });
@@ -54,7 +61,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         mode.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object o) {
-
+                check();
                 return true;
             }
         });
@@ -96,16 +103,56 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     }
 
     @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        getPreferenceManager().setSharedPreferencesName("settingsPreference");
-        getPreferenceManager().setSharedPreferencesMode(Context.MODE_PRIVATE);
+
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+       /* SwitchPreferenceCompat preference = (SwitchPreferenceCompat) findPreference("dark");
+        preference.setSummaryOff("Switch off state updated from code");
+        preference.setSummaryOn("Switch on state updated from code");*/
+
+      /*  SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        boolean isChecked = sharedPreferences.getBoolean("night", false);
+        Toast.makeText(getActivity(), "isChecked : " + isChecked, Toast.LENGTH_LONG).show();
+        */
+
+        getPreferenceScreen().getSharedPreferences()
+                .registerOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        getPreferenceScreen().getSharedPreferences()
+                .unregisterOnSharedPreferenceChangeListener(this);
+
+    }
+
+    @Override
+    public void onDestroy() {
+
+
+        super.onDestroy();
+
     }
 
     public void check() {
         SharedPreferences modepref = PreferenceManager.getDefaultSharedPreferences(getActivity());
         boolean isChecked = modepref.getBoolean("dark", false);
         //String mode = sharedPreferences.getString("dark", Boolean.toString(isChecked));
+
         Toast.makeText(getActivity(), "isChecked : " + isChecked, Toast.LENGTH_LONG).show();
     }
 
@@ -140,25 +187,16 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         }
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
+    private class RefershActivityOnPreferenceChangeListener implements Preference.OnPreferenceChangeListener {
+        private final int resultCode;
+        public RefershActivityOnPreferenceChangeListener(int resultCode) {
+            this.resultCode = resultCode;
+        }
 
-       /* SwitchPreferenceCompat preference = (SwitchPreferenceCompat) findPreference("dark");
-        preference.setSummaryOff("Switch off state updated from code");
-        preference.setSummaryOn("Switch on state updated from code");*/
+        @Override
+        public boolean onPreferenceChange(Preference p, Object newValue) {
 
-      /*  SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        boolean isChecked = sharedPreferences.getBoolean("night", false);
-        Toast.makeText(getActivity(), "isChecked : " + isChecked, Toast.LENGTH_LONG).show();
-        */
-
+            return true;
+        }
     }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-
-    }
-
 }
